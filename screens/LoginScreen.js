@@ -10,6 +10,7 @@ import {
   StyleSheet,
   Button,
 } from "react-native";
+import { setProfile } from "../FirebaseFunctions.js";
 
 export default class LoginScreen extends React.Component {
   render() {
@@ -64,8 +65,15 @@ export default class LoginScreen extends React.Component {
           console.log(credential);
           firebase //This function is not working RN!
             .auth()
-            .signInWithCredential(credential);
-          /* .catch(function (error) {
+            .signInWithCredential(credential)
+            .then(function (result) {
+              console.log("Signed in!");
+
+              if (result.additionalUserInfo.isNewUser) {
+                setProfile(result);
+              }
+            })
+            .catch(function (error) {
               // Handle Errors here.
               console.log("error signing in");
               var errorCode = error.code;
@@ -75,7 +83,7 @@ export default class LoginScreen extends React.Component {
               // The firebase.auth.AuthCredential type that was used.
               var credential = error.credential;
               // ...
-            }) */
+            });
         } else {
           console.log("User already signed-in Firebase.");
         }
