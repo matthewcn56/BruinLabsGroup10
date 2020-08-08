@@ -4,7 +4,7 @@ import HomePage from "./screens/HomePage.js";
 import LoadingScreen from "./screens/LoadingScreen.js";
 import LoginScreen from "./screens/LoginScreen.js";
 import { createAppContainer, createSwitchNavigator } from "react-navigation";
-import { setProfile } from './FirebaseFunctions';
+import { setProfile } from "./FirebaseFunctions";
 
 export default class App extends React.Component {
   constructor(props) {
@@ -13,14 +13,6 @@ export default class App extends React.Component {
       isAuthenticationReady: false,
       isAuthenticated: false,
     };
-    setProfile({
-      user: {
-        uid: 'hi',
-        email: 'test@gmail.com',
-        profilePic: 'dne',
-        displayName: 'leo testing things out, don\'t worry',
-      }
-    });
   }
 
   render() {

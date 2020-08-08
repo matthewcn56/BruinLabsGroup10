@@ -1,8 +1,9 @@
 import ApiKeys from "./constants/ApiKeys.js";
 import * as firebase from "firebase";
+import "firebase/firestore";
 
 firebase.initializeApp(ApiKeys.FirebaseConfig);
-console.log('started app');
+console.log("started app");
 let db = firebase.firestore();
 
 export async function setProfile(result) {
@@ -15,7 +16,7 @@ export async function setProfile(result) {
     createdAt: firebase.firestore.FieldValue.serverTimestamp(),
     lastLoggedIn: firebase.firestore.FieldValue.serverTimestamp(),
   });
-  console.log((await db.collection('users').doc(result.user.uid).get()).data());
+  console.log((await db.collection("users").doc(result.user.uid).get()).data());
   if (result.user.photoUrl != null)
     db.collection("users").doc(result.user.uid).update({
       profilePic: result.user.photoUrl,
