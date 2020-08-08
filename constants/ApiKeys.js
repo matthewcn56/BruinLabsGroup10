@@ -13,6 +13,8 @@ export default {
     //This is just a test one, we have to finalize our name first!
     iosID:
       "227267657456-q9h8cs8ilnsrddefqp4kchv3l8k9lvlq.apps.googleusercontent.com",
+    androidID:
+      "227267657456-e7t91p34fbt5rovq41cr6p1dvujp6rs3.apps.googleusercontent.com",
   },
 };
 
