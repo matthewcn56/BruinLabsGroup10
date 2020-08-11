@@ -37,6 +37,7 @@ export default class LoginScreen extends React.Component {
 
       if (result.type === "success") {
         this.onSignIn(result);
+
         return result.accessToken;
       } else {
         console.log("Cancelled");
