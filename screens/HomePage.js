@@ -6,6 +6,7 @@ import {
   Image,
   StyleSheet,
   Button,
+  ScrollView,
 } from "react-native";
 import { signOut } from "../FirebaseFunctions.js";
 import Class from "./SubComponents/Class.js";
@@ -17,17 +18,36 @@ export default class HomePage extends React.Component {
   render() {
     return (
       <SafeAreaView style={styles.container}>
-        <Button
-          title="Profile Page"
-          onPress={() => this.props.navigation.navigate("ProfileScreen")}
-        />
-        <Image source={require("../assets/icon.png")} />
-        <Text>User's profile pic here (read from db tomorrow)</Text>
-        <Class className="ENGCOMP3" navigate={this.navigate} />
-        <Class className="COMPSCI31" navigate={this.navigate} />
-        <Class className="PHYSICS1A" navigate={this.navigate} />
-        <Text>Welcome, new user (Will read from db tomorrow)</Text>
-        <Button title="Sign Out" onPress={signOut} />
+        <ScrollView>
+          <Button
+            title="Profile Page"
+            onPress={() => this.props.navigation.navigate("ProfileScreen")}
+          />
+          <Image source={require("../assets/icon.png")} />
+          <Text>User's profile pic here </Text>
+          <Text>Welcome, USERNAME {/*INSERT NAVBAR UNDERSCROLLVIEW */}</Text>
+          <Class
+            className="COMPSCI31"
+            handlePress={() =>
+              this.props.navigation.navigate("ClassInfoScreen")
+            }
+          />
+          <Class
+            className="ENGCOMP3"
+            handlePress={() =>
+              this.props.navigation.navigate("ClassInfoScreen")
+            }
+          />
+
+          <Class
+            className="PHYSICS1A"
+            handlePress={() =>
+              this.props.navigation.navigate("ClassInfoScreen")
+            }
+          />
+
+          <Button title="Sign Out" onPress={signOut} />
+        </ScrollView>
       </SafeAreaView>
     );
   }

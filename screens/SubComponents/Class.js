@@ -7,8 +7,7 @@ import {
   StyleSheet,
   Button,
 } from "react-native";
-import { render } from "react-dom";
 
 export default function Class(props) {
-  return <Button title={props.className} />;
+  return <Button title={props.className} onPress={props.handlePress} />;
 }
