@@ -6,6 +6,10 @@ import LoginScreen from "./screens/LoginScreen.js";
 import ProfileScreen from "./screens/ProfileScreen.js";
 import ClassInfoScreen from "./screens/ClassInfoScreen";
 import EditProfileScreen from "./screens/EditProfileScreen";
+import SearchScreen from "./screens/SearchScreen.js";
+import ContactsScreen from "./screens/ContactsScreen.js";
+import ChatsScreen from "./screens/ChatsScreen.js";
+import AddContactScreen from "./screens/AddContactScreen.js";
 import { createAppContainer, createSwitchNavigator } from "react-navigation";
 
 export default class App extends React.Component {
@@ -27,6 +31,10 @@ const AppSwitchNavigator = createSwitchNavigator({
   ProfileScreen: ProfileScreen,
   ClassInfoScreen: ClassInfoScreen,
   EditProfileScreen: EditProfileScreen,
+  SearchScreen: SearchScreen,
+  ContactsScreen: ContactsScreen,
+  AddContactScreen: AddContactScreen,
+  ChatsScreen: ChatsScreen,
 });
 const AppNavigator = createAppContainer(AppSwitchNavigator);
 

@@ -10,7 +10,7 @@ import {
 } from "react-native";
 import { signOut } from "../FirebaseFunctions.js";
 
-export default class HomePage extends React.Component {
+export default class ProfileScreen extends React.Component {
   render() {
     return (
       <SafeAreaView style={styles.container}>

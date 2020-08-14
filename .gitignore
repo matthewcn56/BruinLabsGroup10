@@ -1,1 +1,4 @@
 node_modules
+.DS_Store
+.expo/web/cache/development/babel-loader
+.expo/web/cache/development/.DS_Store

@@ -10,12 +10,12 @@ import {
 } from "react-native";
 import { signOut } from "../FirebaseFunctions.js";
 
-export default class EditProfileScreen extends React.Component {
+export default class SearchScreen extends React.Component {
   render() {
     return (
       <SafeAreaView style={styles.container}>
         <ScrollView>
-          <Text>This is the Edit Profile Info Screen</Text>
+          <Text>This is the SearchScreen</Text>
           <Button
             title="Home Page"
             onPress={() => this.props.navigation.navigate("HomePage")}

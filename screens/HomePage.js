@@ -17,38 +17,33 @@ export default class HomePage extends React.Component {
   }
   render() {
     return (
-      <SafeAreaView style={styles.container}>
-        <ScrollView>
-          <Button
-            title="Profile Page"
-            onPress={() => this.props.navigation.navigate("ProfileScreen")}
-          />
-          <Image source={require("../assets/icon.png")} />
-          <Text>User's profile pic here </Text>
-          <Text>Welcome, USERNAME {/*INSERT NAVBAR UNDERSCROLLVIEW */}</Text>
-          <Class
-            className="COMPSCI31"
-            handlePress={() =>
-              this.props.navigation.navigate("ClassInfoScreen")
-            }
-          />
-          <Class
-            className="ENGCOMP3"
-            handlePress={() =>
-              this.props.navigation.navigate("ClassInfoScreen")
-            }
-          />
+      <ScrollView contentContainerStyle={styles.container}>
+        <Button
+          title="Profile Page"
+          onPress={() => this.props.navigation.navigate("ProfileScreen")}
+        />
+        <Image source={require("../assets/icon.png")} />
+        <Text>User's profile pic here </Text>
+        <Text>Welcome, USERNAME {/*INSERT NAVBAR UNDERSCROLLVIEW */}</Text>
+        <Class
+          className="COMPSCI31"
+          handlePress={() => this.props.navigation.navigate("ClassInfoScreen")}
+        />
+        <Class
+          className="ENGCOMP3"
+          handlePress={() => this.props.navigation.navigate("ClassInfoScreen")}
+        />
 
-          <Class
-            className="PHYSICS1A"
-            handlePress={() =>
-              this.props.navigation.navigate("ClassInfoScreen")
-            }
-          />
-
-          <Button title="Sign Out" onPress={signOut} />
-        </ScrollView>
-      </SafeAreaView>
+        <Class
+          className="PHYSICS1A"
+          handlePress={() => this.props.navigation.navigate("ClassInfoScreen")}
+        />
+        <Button
+          title="Chat"
+          onPress={() => this.props.navigation.navigate("ChatsScreen")}
+        />
+        <Button title="Sign Out" onPress={signOut} />
+      </ScrollView>
     );
   }
 }

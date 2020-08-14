@@ -9,21 +9,26 @@ import {
   Image,
   StyleSheet,
   Button,
+  TouchableOpacity,
+  ScrollView,
 } from "react-native";
 import { setProfile } from "../FirebaseFunctions.js";
 
 export default class LoginScreen extends React.Component {
   render() {
     return (
-      <SafeAreaView style={styles.container}>
-        <Image source={require("../assets/icon.png")} />
-        <Text>Bruin Labs Group 10</Text>
-        <Text>Short Description</Text>
-        <Button
-          title="Log In Or Register With Google"
-          onPress={this.login}
-        ></Button>
-      </SafeAreaView>
+      <ScrollView contentContainerStyle={styles.container}>
+        <Image
+          source={require("../assets/ClassmateConnect.jpeg")}
+          style={styles.logo}
+        />
+        <Text style={styles.bodyText}>
+          A way to connect with our classmates amidst the COVID-19 pandemic
+        </Text>
+        <TouchableOpacity style={styles.loginButton} onPress={this.login}>
+          <Text style={styles.loginText}>Sign In</Text>
+        </TouchableOpacity>
+      </ScrollView>
     );
   }
 
@@ -112,8 +117,29 @@ export default class LoginScreen extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
+    marginRight: 50,
+    marginLeft: 50,
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
+  },
+  header: { fontSize: 40, textAlign: "center" },
+  bodyText: { fontSize: 20, textAlign: "center", color: "gray" },
+  logo: {
+    width: 350,
+    height: 350,
+  },
+  loginButton: {
+    margin: 200,
+    marginBottom: 10,
+    width: 150,
+    height: 50,
+    backgroundColor: "dodgerblue",
+  },
+  loginText: {
+    fontSize: 30,
+    textAlign: "center",
+    color: "#DCDCDC",
+    marginTop: 5,
   },
 });
